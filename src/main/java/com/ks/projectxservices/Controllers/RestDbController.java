@@ -17,6 +17,6 @@ public class RestDbController {
     @PostMapping("/restdb/insert")
     public ResponseEntity<String> insertRecords(@RequestBody String record) {
         System.out.println(record);
-        return restDbCRUDService.insertRecord(record);
+        return restDbCRUDService.insertRecordIfUnique(record);
     }
 }
