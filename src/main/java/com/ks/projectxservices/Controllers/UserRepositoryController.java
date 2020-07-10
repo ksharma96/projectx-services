@@ -6,6 +6,8 @@ import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping(path="/user")
 public class UserRepositoryController {
@@ -32,6 +34,18 @@ public class UserRepositoryController {
     @GetMapping(path="/allUsers")
     public @ResponseBody Iterable<User> getAllUsers() {
         return userRepository.findAll();
+    }
+
+    @GetMapping(path="/getUserById")
+    public @ResponseBody
+    List<User> getUserById(@RequestBody String userId) {
+        return userRepository.findByUserid(Integer.parseInt(userId));
+    }
+
+    @GetMapping("/getUserByUsername")
+    public @ResponseBody
+    List<User> getUserByUsername(@RequestBody String username) {
+        return userRepository.findByUsername(username);
     }
 
 }
