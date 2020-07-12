@@ -16,7 +16,14 @@ public class User {
 
     private String password;
 
-    private String user_role;
+    private String email;
+
+    private String firstname;
+
+    private String lastname;
+
+   // private Integer is_active;
+
 
     public Integer getUserid() {
         return userid;
@@ -42,11 +49,19 @@ public class User {
         this.password = password;
     }
 
-    public String getUser_role() {
-        return user_role;
-    }
+    public String getEmail() { return email; }
 
-    public void setUser_role(String user_role) {
-        this.user_role = user_role;
-    }
+    public void setEmail(String email) { this.email = email; }
+
+    public String getFirstname() { return firstname; }
+
+    public void setFirstname(String firstname) { this.firstname = firstname; }
+
+    public String getLastname() { return lastname; }
+
+    public void setLastname(String lastname) { this.lastname = lastname; }
+
+   // public Integer getIs_active() { return is_active; }
+
+    //public void setIs_active(Integer is_active) { this.is_active = is_active; }
 }

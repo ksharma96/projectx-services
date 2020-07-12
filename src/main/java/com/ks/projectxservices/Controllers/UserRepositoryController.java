@@ -21,7 +21,10 @@ public class UserRepositoryController {
             User user = new User();
             user.setUsername(jsonBodyObject.get("username").toString());
             user.setPassword(jsonBodyObject.get("password").toString());
-            user.setUser_role(jsonBodyObject.get("user_role").toString());
+            user.setEmail(jsonBodyObject.get("email").toString());
+            user.setFirstname(jsonBodyObject.get("firstname").toString());
+            user.setLastname(jsonBodyObject.get("lastname").toString());
+            //user.setIs_active(jsonBodyObject.get("is_active").toString());
             userRepository.save(user);
             return "Saved";
         }
