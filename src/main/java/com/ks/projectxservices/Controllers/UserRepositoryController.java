@@ -24,7 +24,9 @@ public class UserRepositoryController {
             user.setEmail(jsonBodyObject.get("email").toString());
             user.setFirstname(jsonBodyObject.get("firstname").toString());
             user.setLastname(jsonBodyObject.get("lastname").toString());
-            //user.setIs_active(jsonBodyObject.get("is_active").toString());
+//            String is_active_value = jsonBodyObject.get("is_active").toString();
+//            user.setIs_active(Integer.parseInt(is_active_value));
+            user.setIs_active(1);
             userRepository.save(user);
             return "Saved";
         }

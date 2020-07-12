@@ -22,7 +22,7 @@ public class User {
 
     private String lastname;
 
-   // private Integer is_active;
+    private Integer is_active;
 
 
     public Integer getUserid() {
@@ -61,7 +61,7 @@ public class User {
 
     public void setLastname(String lastname) { this.lastname = lastname; }
 
-   // public Integer getIs_active() { return is_active; }
+    public Integer getIs_active() { return is_active; }
 
-    //public void setIs_active(Integer is_active) { this.is_active = is_active; }
+    public void setIs_active(Integer is_active) { this.is_active = is_active; }
 }
