@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:3200")
 @RequestMapping(path = "/user")
 public class UserRepositoryController {
 
@@ -57,7 +58,7 @@ public class UserRepositoryController {
         return userRepository.findByUserid(Integer.parseInt(userId));
     }
 
-    @GetMapping("/getUserByUsername")
+    @PostMapping("/getUserByUsername")
     public @ResponseBody
     List<User> getUserByUsername(@RequestBody String username) {
         return userRepository.findByUsername(username);

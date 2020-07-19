@@ -2,7 +2,6 @@ package com.ks.projectxservices.Services;
 
 import com.ks.projectxservices.Models.User;
 import com.ks.projectxservices.Models.UserRepository;
-import com.sun.org.apache.xpath.internal.operations.Bool;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
