@@ -1,6 +1,6 @@
 package com.ks.projectxservices.Services;
 
-import com.ks.projectxservices.Models.User;
+import com.ks.projectxservices.Models.UserData;
 import com.ks.projectxservices.Models.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,7 +14,7 @@ public class UserRepositoryServices {
     private UserRepository userRepository;
 
     public Boolean isExistingUser(String username) {
-        List<User> userList = userRepository.findByUsername(username);
+        List<UserData> userList = userRepository.findByUsername(username);
 
         if (userList.isEmpty()) return false;
 
@@ -22,7 +22,7 @@ public class UserRepositoryServices {
     }
 
     public Boolean isExistingEmail(String email) {
-        List<User> userList = userRepository.findByEmail(email);
+        List<UserData> userList = userRepository.findByEmail(email);
 
         if (userList.isEmpty()) return false;
 

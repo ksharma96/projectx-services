@@ -1,6 +1,6 @@
 package com.ks.projectxservices.Controllers;
 
-import com.ks.projectxservices.Models.User;
+import com.ks.projectxservices.Models.UserData;
 import com.ks.projectxservices.Models.UserRepository;
 import com.ks.projectxservices.Services.UserRepositoryServices;
 import org.json.JSONObject;
@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:3200")
+@CrossOrigin(origins = "*")
 @RequestMapping(path = "/user")
 public class UserRepositoryController {
 
@@ -26,7 +26,7 @@ public class UserRepositoryController {
     String addUser(@RequestBody String jsonBody) {
         try {
             JSONObject jsonBodyObject = new JSONObject(jsonBody);
-            User user = new User();
+            UserData user = new UserData();
             user.setUsername(jsonBodyObject.get("username").toString());
             user.setPassword(jsonBodyObject.get("password").toString());
             user.setEmail(jsonBodyObject.get("email").toString());
@@ -48,19 +48,19 @@ public class UserRepositoryController {
 
     @GetMapping(path = "/allUsers")
     public @ResponseBody
-    Iterable<User> getAllUsers() {
+    Iterable<UserData> getAllUsers() {
         return userRepository.findAll();
     }
 
     @GetMapping(path = "/getUserById")
     public @ResponseBody
-    List<User> getUserById(@RequestBody String userId) {
+    List<UserData> getUserById(@RequestBody String userId) {
         return userRepository.findByUserid(Integer.parseInt(userId));
     }
 
     @PostMapping("/getUserByUsername")
     public @ResponseBody
-    List<User> getUserByUsername(@RequestBody String username) {
+    List<UserData> getUserByUsername(@RequestBody String username) {
         return userRepository.findByUsername(username);
     }
 
